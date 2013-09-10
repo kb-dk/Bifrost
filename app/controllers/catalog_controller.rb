@@ -7,9 +7,10 @@ class CatalogController < ApplicationController
 
   configure_blacklight do |config|
     ## Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
-    config.default_solr_params = { 
-      :qt => 'search',
-      :rows => 10 
+    config.default_solr_params = {
+        :qf => 'title_tesim title_ssm author_tesim description_tesim local_tesim imagetype_tesim category_tesim fileidentifier_tesim keywords_tesim id copyright_tesim',
+        :qt => 'search',
+        :rows => 10
     }
 
     ## Default parameters to send on single-document requests to Solr. These settings are the Blackligt defaults (see SolrHelper#solr_doc_params) or 
@@ -24,13 +25,14 @@ class CatalogController < ApplicationController
     #}
 
     # solr field configuration for search results/index views
-    config.index.show_link = 'title_display'
-    config.index.record_display_type = 'format'
+    config.index.show_link = 'title_ssm'
+    config.index.record_tsim_type = 'has_model_ssim'
 
     # solr field configuration for document/show views
-    config.show.html_title = 'title_display'
-    config.show.heading = 'title_display'
-    config.show.display_type = 'format'
+    config.show.html_title = 'title_ssm'
+    config.show.html_subtitle = 'has_model_ssim'
+    config.show.heading = 'title_ssm'
+    config.show.display_type = 'has_model_ssim'
 
     # solr fields that will be treated as facets by the blacklight application
     #   The ordering of the field names is the order of the display
@@ -58,6 +60,7 @@ class CatalogController < ApplicationController
     #config.add_facet_field 'lc_1letter_facet', :label => 'Call Number'
     #config.add_facet_field 'subject_geo_facet', :label => 'Region'
     #config.add_facet_field 'subject_era_facet', :label => 'Era'
+    config.add_facet_field 'active_fedora_model_ssi', :label => 'Model'
 
     #config.add_facet_field 'example_pivot_field', :label => 'Pivot Field', :pivot => ['format', 'language_facet']
 
@@ -76,7 +79,11 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display 
     config.add_index_field 'title_display', :label => 'Title:' 
-    config.add_index_field 'title_vern_display', :label => 'Title:' 
+    config.add_index_field 'title_vern_display', :label => 'Title:'
+    config.add_index_field 'author', :label => 'Ophav:'
+    config.add_index_field 'active_fedora_model_ssi', :label => 'HAS MODEL:'
+    config.add_index_field 'copyright', :label => 'License:'
+
     #config.add_index_field 'author_display', :label => 'Author:'
     #config.add_index_field 'author_vern_display', :label => 'Author:'
     #config.add_index_field 'format', :label => 'Format:'
@@ -84,6 +91,7 @@ class CatalogController < ApplicationController
     #config.add_index_field 'published_display', :label => 'Published:'
     #config.add_index_field 'published_vern_display', :label => 'Published:'
     #config.add_index_field 'lc_callnum_display', :label => 'Call number:'
+
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display 
