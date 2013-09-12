@@ -1,0 +1,8 @@
+development:
+  Image: http://localhost:3001/Image/
+
+test:
+  Image: http://localhost:3000/Image/
+
+production:
+  Image: http://localhost:3001/Image/
