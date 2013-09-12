@@ -1,8 +1,11 @@
 development:
-  Image: http://localhost:3001/Image/
+  Image: http://localhost:3003/catalog/
+  Paper: http://localhost:3001/catalog/
 
 test:
-  Image: http://localhost:3000/Image/
+  Image: http://localhost:3003/catalog/
+  Paper: http://localhost:3001/catalog/
 
 production:
-  Image: http://localhost:3001/Image/
+  Image: http://localhost:3003/catalog/
+  Paper: http://localhost:3001/catalog/
