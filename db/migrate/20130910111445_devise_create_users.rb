@@ -13,7 +13,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.datetime :remember_created_at
 
       ## Trackable
-      t.integer  :sign_in_count, :default => 0, :null => false
+      t.integer  :sign_in_count, :default => 0
       t.datetime :current_sign_in_at
       t.datetime :last_sign_in_at
       t.string   :current_sign_in_ip
@@ -30,6 +30,12 @@ class DeviseCreateUsers < ActiveRecord::Migration
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
+      ## Token authenticatable
+      # t.string :authentication_token
+
+      ## Model specific
+      t.string :pid
+      t.string :name
 
       t.timestamps
     end
@@ -38,5 +44,6 @@ class DeviseCreateUsers < ActiveRecord::Migration
     add_index :users, :reset_password_token, :unique => true
     # add_index :users, :confirmation_token,   :unique => true
     # add_index :users, :unlock_token,         :unique => true
+    # add_index :users, :authentication_token, :unique => true
   end
 end
