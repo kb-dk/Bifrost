@@ -10,6 +10,7 @@ class CatalogController < ApplicationController
     config.default_solr_params = {
         :qf => 'title_tesim title_ssm author_tesim description_tesim local_tesim imagetype_tesim category_tesim fileidentifier_tesim keywords_tesim id copyright_tesim',
         :qt => 'search',
+        :bq => 'active_fedora_model_ssi:Paper^200.0',
         :rows => 10
     }
 
@@ -61,6 +62,11 @@ class CatalogController < ApplicationController
     #config.add_facet_field 'subject_geo_facet', :label => 'Region'
     #config.add_facet_field 'subject_era_facet', :label => 'Era'
     config.add_facet_field 'active_fedora_model_ssi', :label => 'Model'
+    #config.add_facet_field 'licens_url', :label => 'Licens'
+    config.add_facet_field 'date_start_ssi', :label => 'År:', :limit => 17
+    config.add_facet_field 'licens_title_ssm', :label => 'Licens:', :limit => 7
+    config.add_facet_field 'copyright_ssi', :label => 'Licens C:', :limit => 7
+
 
     #config.add_facet_field 'example_pivot_field', :label => 'Pivot Field', :pivot => ['format', 'language_facet']
 
@@ -80,9 +86,11 @@ class CatalogController < ApplicationController
     #   The ordering of the field names is the order of the display 
     config.add_index_field 'title_display', :label => 'Title:' 
     config.add_index_field 'title_vern_display', :label => 'Title:'
-    config.add_index_field 'author', :label => 'Ophav:'
-    config.add_index_field 'active_fedora_model_ssi', :label => 'HAS MODEL:'
-    config.add_index_field 'copyright', :label => 'License:'
+    config.add_index_field 'author_tesim', :label => 'Ophav:'
+    config.add_index_field 'active_fedora_model_ssi', :label => 'Type:'
+    config.add_index_field 'copyright_tesim', :label => 'License:'
+    config.add_index_field 'licens_ssi', :label => 'License:'
+
 
     #config.add_index_field 'author_display', :label => 'Author:'
     #config.add_index_field 'author_vern_display', :label => 'Author:'

@@ -17,6 +17,7 @@ gem "bootstrap-sass"
 gem 'jquery-rails'
 
 gem 'bootswatch-rails'
+gem 'thin'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -28,6 +29,11 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+end
+
+
+group :development do
+  gem 'better_errors'
 end
 
 
