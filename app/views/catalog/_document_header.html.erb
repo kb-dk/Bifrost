@@ -1,0 +1,18 @@
+     
+      <% # header bar for doc items in index view -%>
+      <div class="documentHeader clearfix">
+        
+        <% # main title container for doc partial view -%>
+        <%- unless document[:active_fedora_model_ssi].blank? || MODEL_REFERENCE_CONFIG[document[:active_fedora_model_ssi]].blank? %>
+
+         <h5 class="index_title"><%= t('blacklight.search.documents.counter', :counter => (document_counter + 1 + @response.params[:start].to_i)) %>
+           <%= link_to document[:title_ssm].first.html_safe,
+                       "#{MODEL_REFERENCE_CONFIG[document[:active_fedora_model_ssi]]}#{document[:id]}",
+                       :label=>document_show_link_field(document),
+                       :counter => (document_counter + 1 + @response.params[:start].to_i) %>
+         </h5>
+        <%- end %>
+        <% # bookmark functions for items/docs -%>
+        <%= render_index_doc_actions document, :wrapping_class => "documentFunctions span2" %>
+      </div>
+      
