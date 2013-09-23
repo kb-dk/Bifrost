@@ -1,5 +1,6 @@
 Bifrost
 =======
+[![Build Status](https://travis-ci.org/Det-Kongelige-Bibliotek/Bifrost.png?branch=master)](https://travis-ci.org/Det-Kongelige-Bibliotek/Bifrost)
 
 Generic search interface for all collections in Bifrost
 
