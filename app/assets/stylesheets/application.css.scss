@@ -11,10 +11,11 @@
  *= require_self
  *= require_tree .
  */
-@import "variables";
-@import "bootswatch";
+@import "bootswatch/cosmo/variables";
 
-@import "bootstrap/bootstrap";
+@import "bootstrap";
 @import "bootstrap-responsive";
+
+@import "bootswatch/cosmo/bootswatch";
 
 @import 'blacklight/blacklight';
