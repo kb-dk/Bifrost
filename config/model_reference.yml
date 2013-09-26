@@ -1,11 +1,10 @@
 development:
-  Image: http://localhost:3002/images/
-  Paper: http://localhost:3000/catalog/
-
+  Image: http://bifrost-billeder.kb.dk/catalog/
+  Paper: http://bifrost-dias.kb.dk/catalog/
 test:
   Image: http://localhost:3002/images/
   Paper: http://localhost:3000/catalog/
 
 production:
-  Image: http://localhost:3002/images/
-  Paper: http://localhost:3000/catalog/
+  Image: http://bifrost-billeder.kb.dk/catalog/
+  Paper: http://bifrost-dias.kb.dk/catalog/
