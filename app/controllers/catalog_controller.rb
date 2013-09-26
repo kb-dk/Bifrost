@@ -10,8 +10,8 @@ class CatalogController < ApplicationController
     config.default_solr_params = {
         :qf => 'title_tesim title_ssm author_tesim description_tesim local_tesim imagetype_tesim category_tesim fileidentifier_tesim keywords_tesim id copyright_tesim',
         :qt => 'search',
-        :bq => 'active_fedora_model_ssi:Paper^200.0',
-        :rows => 10
+        :bq => 'active_fedora_model_ssi:Paper^2.0',
+        :rows => 20
     }
 
     ## Default parameters to send on single-document requests to Solr. These settings are the Blackligt defaults (see SolrHelper#solr_doc_params) or 
@@ -65,7 +65,7 @@ class CatalogController < ApplicationController
     #config.add_facet_field 'licens_url', :label => 'Licens'
     config.add_facet_field 'date_start_ssi', :label => 'År:', :limit => 17
     config.add_facet_field 'licens_title_ssm', :label => 'Licens:', :limit => 7
-    config.add_facet_field 'copyright_ssi', :label => 'Licens C:', :limit => 7
+    config.add_facet_field 'copyright_ssi', :label => 'Licens:', :limit => 7
 
 
     #config.add_facet_field 'example_pivot_field', :label => 'Pivot Field', :pivot => ['format', 'language_facet']
