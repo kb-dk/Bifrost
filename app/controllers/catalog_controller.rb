@@ -10,7 +10,7 @@ class CatalogController < ApplicationController
     config.default_solr_params = {
         :qf => 'title_tesim title_ssm author_tesim description_tesim local_tesim imagetype_tesim category_tesim fileidentifier_tesim keywords_tesim id copyright_tesim',
         :qt => 'search',
-        :bq => 'active_fedora_model_ssi:Paper^2.0',
+        :bq => 'active_fedora_model_ssi:Paper^0.001',
         :rows => 20
     }
 
