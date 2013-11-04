@@ -64,21 +64,23 @@ blockquote small {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
+  background-color: #004429;
 }
 .navbar .brand {
   float: left;
   display: block;
+  background-color: darkgreen;
   padding: 18px 20px 16px;
   margin-left: -20px;
   font-size: 20px;
-  font-family: 'Crete Round', serif;
+  font-family: "Open Sans",Calibri,Candara,Arial,sans-serif;
   font-weight: normal;
   color: white;
-  text-shadow: 0 1px 0 #54b4eb;
-  width: 150px;
+  text-shadow: 0 1px 0 #010101;
+  width: auto;
   background: transparent url(/assets/blacklight/logo.png) no-repeat top left;
   display: inline-block;
-  text-indent: 35%;
+  text-indent: 5em;
   white-space: nowrap;
   overflow: hidden;
   padding-right: 0;
@@ -87,7 +89,7 @@ blockquote small {
 }
 
 .navbar .brand:hover {
-  background-color: #002425;
+  background-color: #004429;
 }
 .navbar .nav > li > a {
   padding: 20px 20px 14px;
@@ -176,7 +178,7 @@ blockquote small {
   }
 }
 div.subnav {
-  background-color: #015b4e;
+  background-color: #004429;
   background-image: none;
   border-color: transparent;
 }
@@ -208,7 +210,7 @@ div.subnav.subnav-fixed {
 }
 .nav .disabled > a,
 .nav .disabled > a:hover {
-  background-color: #028d79;
+  background-color: #004429;
   color: #ffffff;
 }
 .nav-tabs {
@@ -281,7 +283,7 @@ div.subnav.subnav-fixed {
   border-bottom: 1px solid #999999;
 }
 .breadcrumb {
-  background-color: #015b4e;
+  background-color: #004429;
   background-image: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
@@ -306,7 +308,7 @@ div.subnav.subnav-fixed {
   color: #ffffff;
 }
 .pagination ul {
-  background-color: #015b4e;
+  background-color: #004429;
   background-image: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
@@ -315,7 +317,7 @@ div.subnav.subnav-fixed {
 }
 .pagination ul > li > a,
 .pagination ul > li > span {
-  background-color: #015b4e;
+  background-color: #004429;
   border-color: transparent;
   color: #ffffff;
 }
@@ -339,7 +341,7 @@ div.subnav.subnav-fixed {
 .pager li > a,
 .pager li > span {
   border: none;
-  background-color: #015b4e;
+  background-color: #004429;
   color: #ffffff;
 }
 .pager li > a:hover,
@@ -366,7 +368,7 @@ div.subnav.subnav-fixed {
 }
 .table th,
 .table-striped tbody tr:nth-child(odd) th {
-  background-color: #015b4e;
+  background-color: #004429;
   color: #ffffff;
 }
 .table tbody tr.success td {
@@ -417,12 +419,12 @@ select {
 }
 .control-group.success .help-block,
 .control-group.success .help-inline {
-  color: #015b4e;
+  color: #004429;
 }
 .control-group.success input,
 .control-group.success select,
 .control-group.success textarea {
-  border: 1px solid #015b4e;
+  border: 1px solid #004429;
   color: #555555;
 }
 .control-group.warning .help-block,
@@ -454,7 +456,7 @@ select {
 }
 .badge,
 .label {
-  background-color: #015b4e;
+  background-color: #004429;
   text-shadow: none;
 }
 .badge-success,
@@ -511,7 +513,7 @@ select {
 }
 .modal-header {
   padding: 12px 15px 6px;
-  background-color: #015b4e;
+  background-color: #004429;
 }
 .modal-body,
 .modal-footer {

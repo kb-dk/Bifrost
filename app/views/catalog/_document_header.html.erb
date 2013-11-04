@@ -6,10 +6,19 @@
         <%- unless document[:active_fedora_model_ssi].blank? || MODEL_REFERENCE_CONFIG[document[:active_fedora_model_ssi]].blank? %>
 
          <h5 class="index_title"><%= t('blacklight.search.documents.counter', :counter => (document_counter + 1 + @response.params[:start].to_i)) %>
-           <%= link_to document[:title_ssm].first.html_safe,
+           <%- if (!document[:title_ssm].nil? rescue nil ||
+                   !document[:title_ssm].first.empty? rescue nil  ||
+                   !document[:title_ssm].first.blank? rescue nil) then %>
+                 <%= link_to document[:title_ssm].first.html_safe ,
                        "#{MODEL_REFERENCE_CONFIG[document[:active_fedora_model_ssi]]}#{document[:id]}",
                        :label=>document_show_link_field(document),
                        :counter => (document_counter + 1 + @response.params[:start].to_i) %>
+           <%- else %>
+               <%= link_to '',
+                           "#{MODEL_REFERENCE_CONFIG[document[:active_fedora_model_ssi]]}#{document[:id]}",
+                           :label=>document_show_link_field(document),
+                           :counter => (document_counter + 1 + @response.params[:start].to_i) %>
+           <%- end %>
          </h5>
         <%- end %>
         <% # bookmark functions for items/docs -%>

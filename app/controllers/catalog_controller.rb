@@ -10,8 +10,8 @@ class CatalogController < ApplicationController
     config.default_solr_params = {
         :qf => 'title_tesim title_ssm author_tesim description_tesim local_tesim imagetype_tesim category_tesim fileidentifier_tesim keywords_tesim id copyright_tesim',
         :qt => 'search',
-        :bq => 'active_fedora_model_ssi:Paper^200.0',
-        :rows => 10
+        :bq => 'active_fedora_model_ssi:Paper^0.001',
+        :rows => 20
     }
 
     ## Default parameters to send on single-document requests to Solr. These settings are the Blackligt defaults (see SolrHelper#solr_doc_params) or 
@@ -61,11 +61,24 @@ class CatalogController < ApplicationController
     #config.add_facet_field 'lc_1letter_facet', :label => 'Call Number'
     #config.add_facet_field 'subject_geo_facet', :label => 'Region'
     #config.add_facet_field 'subject_era_facet', :label => 'Era'
-    config.add_facet_field 'active_fedora_model_ssi', :label => 'Model'
+    config.add_facet_field 'active_fedora_model_ssi', :label => 'Materiale type:'
     #config.add_facet_field 'licens_url', :label => 'Licens'
-    config.add_facet_field 'date_start_ssi', :label => 'År:', :limit => 17
-    config.add_facet_field 'licens_title_ssm', :label => 'Licens:', :limit => 7
-    config.add_facet_field 'copyright_ssi', :label => 'Licens C:', :limit => 7
+    #config.add_facet_field 'date_start_ssi', :label => 'År:', :limit => 17
+    #config.add_facet_field 'licens_title_ssm', :label => 'Licens:', :limit => 7
+    #config.add_facet_field 'copyright_ssi', :label => 'Licens:', :limit => 7
+    config.add_facet_field solr_name('author', :facetable), :label => 'Ophav:', :limit => 11
+    config.add_facet_field solr_name('person', :facetable), :label => 'Person:', :limit => 11
+
+    #config.add_facet_field solr_name('author_tesim', :facetable, :show=>true), :label => 'Author'
+    config.add_facet_field solr_name('category', :facetable), :label => 'Kategori:', :limit => 11
+    config.add_facet_field solr_name('imagetype', :facetable), :label => 'Type:', :limit => 11
+    config.add_facet_field solr_name('local', :facetable), :label => 'Område:', :limit => 11
+    config.add_facet_field solr_name('keywords', :facetable), :label => 'Emneord:', :limit => 17
+    config.add_facet_field solr_name('date_start', :facetable), :label => 'År:', :limit => 17
+
+
+    config.add_facet_field solr_name('genre', :facetable), :label => 'Genre:', :limit => 11
+    config.add_facet_field solr_name('copyright', :facetable), :label => 'Licens', :limit => 5
 
 
     #config.add_facet_field 'example_pivot_field', :label => 'Pivot Field', :pivot => ['format', 'language_facet']
