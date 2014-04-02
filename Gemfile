@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'hydra', :require => 'hydra6'
+gem 'hydra', '6.1.0' #, :require => 'hydra6'
 gem 'bootswatch-rails'
 gem 'omniauth'
 gem 'omniauth-cas'
+gem 'test-unit'
 
 gem 'sqlite3'
 gem 'blacklight'
